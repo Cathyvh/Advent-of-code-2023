@@ -1,0 +1,89 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "plugins": ["prettier", "@typescript-eslint", "import"],
+  "rules": {
+    "curly": ["error", "multi-line"],
+    "import/no-unresolved": "error",
+    "import/no-useless-path-segments": "error",
+    "import/no-named-as-default": "error",
+    "import/no-unused-modules": "error",
+    "import/no-cycle": [
+      "error",
+      {
+        "maxDepth": 10,
+        "ignoreExternal": true
+      }
+    ],
+    "eqeqeq": "error",
+    "no-console": "off",
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "prefer-destructuring": [
+      "error",
+      {
+        "VariableDeclarator": {
+          "object": true
+        }
+      }
+    ],
+    "consistent-return": [
+      "error",
+      {
+        "treatUndefinedAsUnspecified": true
+      }
+    ],
+    "prefer-template": "error",
+    "object-shorthand": "error",
+    "prettier/prettier": "error",
+    "no-duplicate-imports": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ],
+    "@typescript-eslint/require-await": "error",
+
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"],
+      "typescript": [
+        {
+          "alwaysTryTypes": true
+        }
+      ],
+      "node": [
+        {
+          "extensions": [".js",  ".ts"]
+        }
+      ]
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "project": ["tsconfig.json"],
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+
+}
