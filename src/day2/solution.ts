@@ -1,22 +1,22 @@
 import { parseInputFile } from '../utils'
 
 const games: string[] = parseInputFile('src/day2/input.txt')
-interface RoundObj {
+interface Cube {
   [key: string]: number
 }
-interface RoundObjArr extends Array<RoundObj> {}
+interface Game extends Array<Cube> {}
 
 const parsedGames = games.map((game) => {
   const gameContent = game.split(': ')[1]
   const rounds = gameContent?.split('; ').map((round) => {
     const scores = round.split(', ').map((score) => score.split(' '))
-    const roundObj: RoundObj = {}
+    const cube: Cube = {}
     scores.map((score) => {
       const color = score[1]
       if (!color) throw new Error('No color found')
-      roundObj[color] = Number(score[0])
+      cube[color] = Number(score[0])
     })
-    return roundObj
+    return cube
   })
   if (!rounds) throw new Error('No rounds found')
 
@@ -26,7 +26,7 @@ const parsedGames = games.map((game) => {
 export const day2 = () => {
   const partOne = () => {
     let sum = 0
-    parsedGames.map((game: RoundObjArr, index) => {
+    parsedGames.map((game: Game, index) => {
       const validRounds = game.map((round) => {
         if ((round.red && round.red > 12) || (round.green && round.green > 13) || (round.blue && round.blue > 14))
           return false
@@ -39,7 +39,7 @@ export const day2 = () => {
   }
 
   const partTwo = () => {
-    const combineFewestPossible = parsedGames.map((game: RoundObjArr, index) => {
+    const combineFewestPossible = parsedGames.map((game: Game) => {
       const blue: number[] = []
       const green: number[] = []
       const red: number[] = []
