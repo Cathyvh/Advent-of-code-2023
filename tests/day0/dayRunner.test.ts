@@ -1,18 +1,26 @@
 import { logDayResults } from '../../src/app'
 import { day0 } from '../../src/day0/solution'
 import { day1 } from '../../src/day1/solution'
+import { day2 } from '../../src/day2/solution'
 
 describe('day0', () => {
-  it('returns Hello World', () => {
+  it('returns the solutions', () => {
     const result = day0()
     expect(result).toEqual({ partOne: 'First solution', partTwo: 'Second solution' })
   })
 })
 
 describe('day1', () => {
-  it.only('returns Hello World', () => {
+  it('returns the correct answers', () => {
     const result = day1()
     expect(result).toEqual({ partOne: 54159, partTwo: 53866 })
+  })
+})
+
+describe('day2', () => {
+  it.only('returns the correct answers', () => {
+    const result = day2()
+    expect(result).toEqual({ partOne: 2879, partTwo: 65122 })
   })
 })
 
