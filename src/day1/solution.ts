@@ -1,12 +1,6 @@
 import { Solutions } from '../types'
-import { readFileSync } from 'fs'
-import { resolve } from 'path'
+import { parseInputFile } from '../utils'
 
-const parseInputFile = (input: string) => {
-  const data = readFileSync(input, 'utf8')
-  const lines = data.split('\n')
-  return lines
-}
 const calibrations: string[] = parseInputFile('src/day1/input.txt')
 
 const translateWordToDigit = (word: string | undefined): string => {

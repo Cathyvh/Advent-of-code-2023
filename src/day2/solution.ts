@@ -1,10 +1,5 @@
-import { readFileSync } from 'fs'
+import { parseInputFile } from '../utils'
 
-const parseInputFile = (input: string) => {
-  const data = readFileSync(input, 'utf8')
-  const lines = data.split('\n')
-  return lines
-}
 const games: string[] = parseInputFile('src/day2/input.txt')
 interface RoundObj {
   [key: string]: number
