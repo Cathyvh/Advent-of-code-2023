@@ -1,10 +1,18 @@
 import { logDayResults } from '../../src/app'
 import { day0 } from '../../src/day0/solution'
+import { day1 } from '../../src/day1/solution'
 
 describe('day0', () => {
   it('returns Hello World', () => {
     const result = day0()
     expect(result).toEqual({ partOne: 'First solution', partTwo: 'Second solution' })
+  })
+})
+
+describe('day1', () => {
+  it.only('returns Hello World', () => {
+    const result = day1()
+    expect(result).toEqual({ partOne: 54159, partTwo: 53866 })
   })
 })
 

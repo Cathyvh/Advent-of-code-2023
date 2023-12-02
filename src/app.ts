@@ -1,6 +1,8 @@
-import { Solutions, day0 } from './day0/solution'
+import { day0 } from './day0/solution'
+import { day1 } from './day1/solution'
+import { Solutions } from './types'
 
-const days: Solutions[] = [day0()]
+const days: Solutions[] = [day0(), day1()]
 
 export const logDayResults = (dayId?: number) => {
   const title = '🎄 Advent of Code 2023 🎄\n\n'
